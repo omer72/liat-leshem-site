@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import { Layout, BrandButton, BrandCard } from "@/components";
 
 export const metadata: Metadata = {
-  title: "About — Congruent",
+  title: "About",
   description:
     "Learn about Congruent's mission, values, and the team behind our consulting practice.",
 };

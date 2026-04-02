@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://congruent-site.netlify.app",
+  ),
   title: {
     default: "Congruent — Clarity drives congruent growth",
     template: "%s — Congruent",

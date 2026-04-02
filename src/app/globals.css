@@ -60,15 +60,6 @@
   --spacing-30: 7.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #0a0a0a;
-    --color-foreground: #ededed;
-    --color-surface: #171717;
-    --color-surface-alt: #262626;
-  }
-}
-
 body {
   background: var(--color-background);
   color: var(--color-foreground);
