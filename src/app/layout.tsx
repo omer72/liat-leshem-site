@@ -32,6 +32,25 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Congruent",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://congruent-site.netlify.app",
+  description:
+    "Congruent helps ambitious organisations align strategy with execution — so every decision, team, and system moves in the same direction.",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1 Principal Place",
+    addressLocality: "London",
+    postalCode: "EC2A 2BA",
+    addressCountry: "GB",
+  },
+  telephone: "+442079460958",
+  email: "hello@congruent.com",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -43,6 +62,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <AppRouterCacheProvider>
           <Providers>{children}</Providers>
         </AppRouterCacheProvider>
