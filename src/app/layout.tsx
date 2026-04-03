@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Heebo, Open_Sans } from "next/font/google";
+import { Heebo, Open_Sans, Playfair_Display, Inter } from "next/font/google";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import Providers from "./providers";
 import "./globals.css";
@@ -13,6 +13,19 @@ const heebo = Heebo({
 const openSans = Open_Sans({
   variable: "--font-open-sans",
   subsets: ["hebrew", "latin"],
+  display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
   display: "swap",
 });
 
@@ -64,7 +77,7 @@ export default function RootLayout({
     <html
       lang="he"
       dir="rtl"
-      className={`${heebo.variable} ${openSans.variable} h-full antialiased`}
+      className={`${heebo.variable} ${openSans.variable} ${playfairDisplay.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <script
