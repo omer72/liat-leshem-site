@@ -42,6 +42,7 @@ const navLinks: NavLink[] = [
       { label: "תמונות", href: "/on-camera/photos" },
     ],
   },
+  { label: "הצעת מחיר", href: "/estimate" },
   { label: "צרו קשר", href: "/contact" },
 ];
 
