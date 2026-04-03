@@ -1,54 +1,58 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Heebo, Open_Sans } from "next/font/google";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import Providers from "./providers";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const heebo = Heebo({
+  variable: "--font-heebo",
+  subsets: ["hebrew", "latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
+  subsets: ["hebrew", "latin"],
+  display: "swap",
 });
+
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://liat-leshem.netlify.app";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://congruent-site.netlify.app",
-  ),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Congruent — Clarity drives congruent growth",
-    template: "%s — Congruent",
+    default: "ליאת לשם | קריינות ומול מצלמה — Liat Leshem Voice Over & On Camera",
+    template: "%s — ליאת לשם",
   },
   description:
-    "Congruent helps ambitious organisations align strategy with execution — so every decision, team, and system moves in the same direction.",
+    "ליאת לשם — קריינית ושחקנית מול מצלמה. קריינות לטלוויזיה, רדיו, סרטי תדמית, דיבוב, הגשה ומשחק. Liat Leshem — Voice Over Talent & On-Camera Presenter.",
   icons: { icon: "/favicon.svg" },
   openGraph: {
     type: "website",
-    siteName: "Congruent",
+    siteName: "ליאת לשם — Liat Leshem",
+    locale: "he_IL",
     images: [{ url: "/assets/og-image.svg", width: 1200, height: 630 }],
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Congruent",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://congruent-site.netlify.app",
+  "@type": "Person",
+  name: "ליאת לשם",
+  alternateName: "Liat Leshem",
+  url: siteUrl,
   description:
-    "Congruent helps ambitious organisations align strategy with execution — so every decision, team, and system moves in the same direction.",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "1 Principal Place",
-    addressLocality: "London",
-    postalCode: "EC2A 2BA",
-    addressCountry: "GB",
-  },
-  telephone: "+442079460958",
-  email: "hello@congruent.com",
+    "קריינית ושחקנית מול מצלמה — Voice Over Talent & On-Camera Presenter",
+  jobTitle: "Voice Over Talent & On-Camera Presenter",
+  knowsLanguage: ["he", "en"],
+  sameAs: [
+    "https://www.youtube.com/user/liatleshem",
+    "https://soundcloud.com/liatleshem",
+    "https://www.facebook.com/LeshemVoiceOver/",
+    "https://www.instagram.com/leshem.liat/",
+    "https://www.linkedin.com/in/liatlesh/",
+  ],
 };
 
 export default function RootLayout({
@@ -58,15 +62,16 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      lang="he"
+      dir="rtl"
+      className={`${heebo.variable} ${openSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <AppRouterCacheProvider>
+        <AppRouterCacheProvider options={{ key: "muirtl" }}>
           <Providers>{children}</Providers>
         </AppRouterCacheProvider>
       </body>

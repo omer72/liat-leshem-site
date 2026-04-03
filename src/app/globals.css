@@ -1,67 +1,63 @@
 @import "tailwindcss";
 
-/* ── Brand Design Tokens ── */
-
 @theme inline {
-  /* Primary — deep navy */
-  --color-primary-50: #eef2ff;
-  --color-primary-100: #dce4ff;
-  --color-primary-200: #b9c9ff;
-  --color-primary-300: #8aa5ff;
-  --color-primary-400: #5a7dff;
-  --color-primary-500: #1e3a8a;
-  --color-primary-600: #172e6e;
-  --color-primary-700: #112254;
-  --color-primary-800: #0b173a;
-  --color-primary-900: #060d22;
+  /* Primary — warm coral */
+  --color-primary-50: #fef7f6;
+  --color-primary-100: #fdeeed;
+  --color-primary-200: #fad5d2;
+  --color-primary-300: #f5b0ab;
+  --color-primary-400: #e2928b;
+  --color-primary-500: #d4726a;
+  --color-primary-600: #b8524a;
+  --color-primary-700: #993d36;
+  --color-primary-800: #7a2e29;
+  --color-primary-900: #5c201d;
 
-  /* Accent — warm amber */
-  --color-accent-50: #fffbeb;
-  --color-accent-100: #fef3c7;
-  --color-accent-200: #fde68a;
-  --color-accent-300: #fcd34d;
-  --color-accent-400: #fbbf24;
-  --color-accent-500: #f59e0b;
-  --color-accent-600: #d97706;
-  --color-accent-700: #b45309;
-  --color-accent-800: #92400e;
-  --color-accent-900: #78350f;
+  /* Accent — warm orange */
+  --color-accent-50: #fff4f0;
+  --color-accent-100: #ffe4db;
+  --color-accent-200: #ffbfaa;
+  --color-accent-300: #fb9070;
+  --color-accent-400: #f96b44;
+  --color-accent-500: #d94e2a;
+  --color-accent-600: #b83a1e;
+  --color-accent-700: #962d16;
+  --color-accent-800: #732210;
+  --color-accent-900: #52180b;
 
-  /* Neutral */
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
-
-  /* Semantic */
-  --color-success: #16a34a;
-  --color-warning: #f59e0b;
-  --color-error: #dc2626;
+  /* Neutral — warm stone */
+  --color-neutral-50: #fafaf9;
+  --color-neutral-100: #f5f5f4;
+  --color-neutral-200: #e7e5e4;
+  --color-neutral-300: #d6d3d1;
+  --color-neutral-400: #a8a29e;
+  --color-neutral-500: #78716c;
+  --color-neutral-600: #57534e;
+  --color-neutral-700: #44403c;
+  --color-neutral-800: #292524;
+  --color-neutral-900: #1c1917;
 
   /* Surface */
-  --color-background: #ffffff;
-  --color-foreground: #171717;
+  --color-background: #fef7f6;
+  --color-foreground: #1c1917;
   --color-surface: #ffffff;
-  --color-surface-alt: #fafafa;
+  --color-surface-alt: #fafaf9;
 
   /* Typography */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-heebo), var(--font-open-sans), Arial, sans-serif;
+}
 
-  /* Spacing scale */
-  --spacing-18: 4.5rem;
-  --spacing-22: 5.5rem;
-  --spacing-30: 7.5rem;
+html {
+  direction: rtl;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* RTL-aware utilities */
+[dir="ltr"] {
+  direction: ltr;
 }

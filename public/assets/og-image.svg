@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
-  <rect width="1200" height="630" fill="#1e3a8a"/>
-  <rect x="80" y="80" width="60" height="60" rx="12" fill="#f59e0b"/>
-  <rect x="150" y="150" width="60" height="60" rx="12" fill="#5a7dff" opacity="0.8"/>
-  <text x="80" y="340" font-family="system-ui, sans-serif" font-size="72" font-weight="800" fill="#ffffff" letter-spacing="-2">Congruent</text>
-  <text x="80" y="400" font-family="system-ui, sans-serif" font-size="28" fill="#ffffff" opacity="0.7">Clarity drives congruent growth</text>
+  <rect width="1200" height="630" fill="#fef7f6"/>
+  <rect x="40" y="40" width="1120" height="550" rx="20" fill="#d4726a"/>
+  <text x="600" y="260" font-family="Arial,sans-serif" font-size="72" font-weight="bold" fill="white" text-anchor="middle" direction="rtl">ליאת לשם</text>
+  <text x="600" y="340" font-family="Arial,sans-serif" font-size="36" fill="rgba(255,255,255,0.9)" text-anchor="middle" direction="rtl">קריינות ומול מצלמה</text>
+  <text x="600" y="420" font-family="Arial,sans-serif" font-size="28" fill="rgba(255,255,255,0.7)" text-anchor="middle">Voice Over &amp; On Camera</text>
 </svg>

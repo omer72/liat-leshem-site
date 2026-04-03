@@ -3,3 +3,6 @@ export { default as BrandCard } from "./BrandCard";
 export { default as Header } from "./Header";
 export { default as Footer } from "./Footer";
 export { default as Layout } from "./Layout";
+export { default as PageHero } from "./PageHero";
+export { default as SoundCloudEmbed } from "./SoundCloudEmbed";
+export { default as YouTubeEmbed } from "./YouTubeEmbed";

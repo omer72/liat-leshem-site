@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://congruent-site.netlify.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://liat-leshem.netlify.app";
 
 export default function robots(): MetadataRoute.Robots {
   return {
