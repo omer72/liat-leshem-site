@@ -30,7 +30,7 @@ const inter = Inter({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://liat-leshem.netlify.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://omer72.github.io/liat-leshem-site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
