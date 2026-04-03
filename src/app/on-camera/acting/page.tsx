@@ -1,50 +1,46 @@
 import type { Metadata } from "next";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { Layout, PageHero, BrandButton } from "@/components";
+import { Layout, PageHero, YouTubeEmbed, BrandButton } from "@/components";
 
 export const metadata: Metadata = {
   title: "משחק מול מצלמה",
-  description: "משחק בפרסומות, סרטים קצרים וסדרות טלוויזיה.",
+  description: "משחק בפרסומות, פרומואים, תוכניות, סרטים ויראליים — דוגמאות וידאו.",
 };
+
+const videos = [
+  { id: "AFWOllsYTuM", title: "פרסומת" },
+  { id: "dC8cc318NA8", title: "פרסומת" },
+  { id: "SE831UmvFFw", title: "פרסומת" },
+  { id: "33gxo8kF46g", title: "פרסומת" },
+  { id: "erLsnxqpRoM", title: "פרסומת" },
+  { id: "nzp7JH2O-bI", title: "פרסומת" },
+  { id: "PQtymnbqq74", title: "פרסומת" },
+  { id: "nS-ib-Fpi6c", title: "פרסומת" },
+];
 
 export default function ActingPage() {
   return (
     <Layout>
       <PageHero
         title="משחק מול מצלמה"
-        subtitle="משחק בפרסומות, סרטים קצרים וסדרות טלוויזיה."
+        subtitle="פרסומות, פרומואים, תוכניות, סרטים ויראליים — עושה הכל (טוב כמעט), דברו עם הסוכנת שלי."
       />
 
-      <Box className="max-w-2xl mx-auto text-center mb-12">
-        <Typography variant="body1" color="text.secondary" sx={{ mb: 6, lineHeight: 1.8 }}>
-          ניסיון בינלאומי במשחק מול מצלמה — פרסומות טלוויזיה, סרטים קצרים,
-          סדרות דרמה וקומדיה. נוכחות טבעית ומקצועית מול המצלמה,
-          יכולת אימפרוביזציה ועבודה עם במאים ושחקנים.
-        </Typography>
-
-        <Box
-          className="rounded-2xl px-6 py-10"
-          sx={{ bgcolor: "background.paper", border: 1, borderColor: "divider" }}
-        >
-          <Typography variant="h5" component="h2" sx={{ mb: 2, fontWeight: 600 }}>
-            🎬 שואורeel
-          </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-            צפו בדוגמאות משחק בערוץ היוטיוב שלי.
-          </Typography>
-          <BrandButton
-            href="https://www.youtube.com/user/liatleshem"
-            variant="contained"
-          >
-            לערוץ היוטיוב ←
-          </BrandButton>
+      <Box className="max-w-4xl mx-auto mb-12">
+        <Box className="grid gap-6 sm:grid-cols-2">
+          {videos.map((video) => (
+            <YouTubeEmbed key={video.id} videoId={video.id} title={video.title} />
+          ))}
         </Box>
       </Box>
 
       <Box className="text-center mb-8">
         <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-          סוכנת: חני שלום (סוכנות יולי)
+          סוכנת: חני שלום (סוכנות יולי) —{" "}
+          <Box component="a" href="tel:0523854411" sx={{ color: "primary.main" }} dir="ltr">
+            052-3854411
+          </Box>
         </Typography>
       </Box>
 

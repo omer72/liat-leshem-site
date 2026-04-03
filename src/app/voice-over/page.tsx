@@ -11,33 +11,34 @@ export const metadata: Metadata = {
 const categories = [
   {
     title: "טלוויזיה",
-    description: "קריינות לפרסומות טלוויזיה, פרומואים, טריילרים וקמפיינים.",
+    description: "פרסומות ופרומואים לטלוויזיה בכל סגנונות הקריינות.",
     href: "/voice-over/tv",
     emoji: "📺",
   },
   {
     title: "רדיו",
-    description: "פרסומות רדיו, ג׳ינגלים, פרומואים ודיווחי תנועה.",
+    description: "פרסומות, אותות תחנה ומעברונים לרדיו.",
     href: "/voice-over/radio",
     emoji: "📻",
   },
   {
     title: "סרטי תדמית והדרכה",
-    description: "קריינות לסרטי תדמית ארגוניים, סרטי הדרכה ומצגות.",
+    description: "קריינות לסרטי תדמית, הדרכה, הסברה, הדגמה ועוד.",
     href: "/voice-over/movies",
     emoji: "🎥",
   },
   {
     title: "דיבוב / קריינות משוחקת",
-    description: "דיבוב דמויות, קריינות משוחקת לסרטי אנימציה, משחקים ותוכניות ילדים.",
+    description: "דיבוב דמויות וקריינות משוחקת לסרטי אנימציה, משחקים ותוכניות.",
     href: "/voice-over/dubbing",
     emoji: "🎭",
   },
 ];
 
 const voiceStyles = [
-  "חם ועמוק", "סקסי", "כיפי ושמח", "חלק", "רשמי ודידקטי",
-  "מכירתי (hard sell)", "רך (soft sell)", "פולקלוריסטי", "עירוני",
+  "דיבוב", "קריינות מכירתית", "קריינות שובבה", "קריינות סקסית",
+  "סרטי תדמית", "רדיו", "טלוויזיה", "קריינות מחוייכת",
+  "קריינות רכה", "קריינות קוסמטית",
 ];
 
 export default function VoiceOverPage() {
@@ -45,8 +46,30 @@ export default function VoiceOverPage() {
     <Layout>
       <PageHero
         title="קריינות"
-        subtitle="קול מקצועי ומגוון לכל פרויקט — מפרסומות טלוויזיה ורדיו ועד דיבוב ותדמית."
+        subtitle="קריינית ומדבבת רב-גונית ומנוסה. עברית ואנגלית. מקליטה גם מהבית."
       />
+
+      {/* Voice style tags */}
+      <Box className="flex flex-wrap justify-center gap-2 mb-12">
+        {voiceStyles.map((style) => (
+          <Box
+            key={style}
+            sx={{
+              px: 2.5,
+              py: 1,
+              borderRadius: 6,
+              bgcolor: "primary.50",
+              color: "primary.main",
+              fontSize: "0.9rem",
+              fontWeight: 600,
+              border: 1,
+              borderColor: "primary.200",
+            }}
+          >
+            {style}
+          </Box>
+        ))}
+      </Box>
 
       <Box className="grid gap-6 sm:grid-cols-2 mb-16">
         {categories.map((cat) => (
@@ -65,33 +88,6 @@ export default function VoiceOverPage() {
             </BrandButton>
           </BrandCard>
         ))}
-      </Box>
-
-      {/* Voice styles */}
-      <Box className="text-center mb-16">
-        <Typography variant="h3" component="h2" sx={{ mb: 3, fontWeight: 700 }}>
-          סגנונות קול
-        </Typography>
-        <Box className="flex flex-wrap justify-center gap-2">
-          {voiceStyles.map((style) => (
-            <Box
-              key={style}
-              sx={{
-                px: 2.5,
-                py: 1,
-                borderRadius: 6,
-                bgcolor: "primary.50",
-                color: "primary.main",
-                fontSize: "0.9rem",
-                fontWeight: 500,
-                border: 1,
-                borderColor: "primary.200",
-              }}
-            >
-              {style}
-            </Box>
-          ))}
-        </Box>
       </Box>
 
       {/* Equipment */}
