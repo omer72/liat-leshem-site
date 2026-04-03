@@ -4,6 +4,7 @@ import Image from "next/image";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Layout, BrandButton, BrandCard } from "@/components";
+import liatAvatar from "../../public/images/liat-avatar.webp";
 
 const services = [
   {
@@ -147,7 +148,7 @@ export default function Home() {
             }}
           >
             <Image
-              src="/images/liat-avatar.webp"
+              src={liatAvatar}
               alt="ליאת לשם — קריינית ומשחקת מול מצלמה"
               fill
               priority
