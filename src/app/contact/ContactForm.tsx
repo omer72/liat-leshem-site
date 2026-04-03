@@ -6,6 +6,25 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { BrandButton } from "@/components";
 
+const goldFieldSx = {
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "rgba(201,168,76,0.25)",
+      transition: "border-color 0.3s ease, box-shadow 0.3s ease",
+    },
+    "&:hover fieldset": {
+      borderColor: "rgba(201,168,76,0.5)",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#C9A84C",
+      boxShadow: "0 0 0 3px rgba(201,168,76,0.15)",
+    },
+  },
+  "& .MuiInputLabel-root.Mui-focused": {
+    color: "#C9A84C",
+  },
+};
+
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
 
@@ -25,7 +44,7 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <Box className="text-center py-8">
+      <Box className="text-center py-8 animate-fade-up">
         <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>
           תודה!
         </Typography>
@@ -40,15 +59,16 @@ export default function ContactForm() {
     <Box
       component="form"
       onSubmit={handleSubmit}
+      className="animate-fade-up"
       sx={{
         display: "flex",
         flexDirection: "column",
         gap: 2.5,
-        p: 3,
+        p: 4,
         borderRadius: 3,
-        bgcolor: "background.paper",
-        border: 1,
-        borderColor: "divider",
+        bgcolor: "rgba(45,45,68,0.6)",
+        backdropFilter: "blur(12px)",
+        border: "1px solid rgba(201,168,76,0.15)",
       }}
     >
       <TextField
@@ -57,6 +77,7 @@ export default function ContactForm() {
         required
         fullWidth
         variant="outlined"
+        sx={goldFieldSx}
       />
       <TextField
         name="email"
@@ -66,6 +87,7 @@ export default function ContactForm() {
         fullWidth
         variant="outlined"
         dir="ltr"
+        sx={goldFieldSx}
       />
       <TextField
         name="message"
@@ -75,6 +97,7 @@ export default function ContactForm() {
         multiline
         rows={4}
         variant="outlined"
+        sx={goldFieldSx}
       />
       <BrandButton type="submit" variant="contained" size="large">
         שליחה
