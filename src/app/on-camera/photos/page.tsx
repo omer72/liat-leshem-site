@@ -29,7 +29,7 @@ export default function PhotosPage() {
             sx={{
               aspectRatio: "3/2",
               borderRadius: 3,
-              bgcolor: "neutral.100",
+              bgcolor: "#F0E6D3",
               border: 1,
               borderColor: "divider",
               display: "flex",

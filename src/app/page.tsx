@@ -191,7 +191,7 @@ export default function Home() {
           <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
             מיוצגת ע&quot;י{" "}
             <Box component="span" sx={{ fontWeight: 600 }}>
-              תאריקה זוהר
+              טריקה זוהר
             </Box>
             :{" "}
             <Box

@@ -42,7 +42,6 @@ const navLinks: NavLink[] = [
       { label: "תמונות", href: "/on-camera/photos" },
     ],
   },
-  { label: "I also do English", href: "/english" },
   { label: "צרו קשר", href: "/contact" },
 ];
 

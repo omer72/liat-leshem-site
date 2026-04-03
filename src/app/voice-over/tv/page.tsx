@@ -34,12 +34,12 @@ export default function TVPage() {
               px: 2.5,
               py: 1,
               borderRadius: 6,
-              bgcolor: "primary.50",
+              bgcolor: "rgba(201,168,76,0.08)",
               color: "primary.main",
               fontSize: "0.9rem",
               fontWeight: 600,
               border: 1,
-              borderColor: "primary.200",
+              borderColor: "rgba(201,168,76,0.3)",
             }}
           >
             {style}
