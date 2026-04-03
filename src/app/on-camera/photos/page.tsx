@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { Layout, PageHero, BrandButton } from "@/components";
+import { Layout, PageHero, BrandButton, FlickrGallery } from "@/components";
 
 export const metadata: Metadata = {
   title: "תמונות סטילס",
@@ -22,29 +22,8 @@ export default function PhotosPage() {
         </Typography>
       </Box>
 
-      <Box className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-12">
-        {[1, 2, 3].map((gallery) => (
-          <Box
-            key={gallery}
-            sx={{
-              aspectRatio: "3/2",
-              borderRadius: 3,
-              bgcolor: "#F0E6D3",
-              border: 1,
-              borderColor: "divider",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-              gap: 1,
-            }}
-          >
-            <Typography variant="h3" component="span">📸</Typography>
-            <Typography variant="body2" color="text.secondary">
-              גלריה {gallery}
-            </Typography>
-          </Box>
-        ))}
+      <Box className="mb-12">
+        <FlickrGallery />
       </Box>
 
       <Box className="text-center mb-8">
